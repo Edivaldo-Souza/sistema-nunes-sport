@@ -1,0 +1,112 @@
+.search-section{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.search-section input{
+    width: 25%;
+    border-style: solid;
+    background-color: white;
+    border-radius: 8px;
+    border-color: hsl(0, 0%, 2%);
+    max-height: 4vh;
+    margin-right: 5px;
+}
+
+.search-input-button{
+    width: 81%;
+    display: inherit;
+    justify-content: left;
+    align-items: center;
+}
+
+.search-section button{
+    border-style: none;
+    border-radius: 10px;
+    color: white;
+    background-color: blue;
+    min-height: 4vh;
+}
+
+#products-table{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-crud{
+    position: fixed;
+    background-color: white;
+    box-shadow: 5px 5px 10px rgb(142, 142, 142);
+    width: 30vw;
+    display: flex;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    z-index: 9999;
+    border-radius: 8px;
+    padding: 10px;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+}
+
+.button-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    min-height: 3vh;
+}
+
+.button-container button{
+    width: 50%;
+    border-style: none;
+    border-radius: 10px;
+    color: white;
+}
+
+.save-button{
+    background-color: blue;
+}
+
+.cancel-button{
+    background-color: rgb(79, 79, 79);
+}
+
+.create-product-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.create-product-form-buttons{
+    display: flex;
+    justify-content: center;
+    min-height: 3vh;
+}
+
+.create-product-form-buttons button{
+    width: 40%;
+    border-style: none;
+    border-radius: 10px;
+    color: white;
+    min-height: 4vh;
+    margin: 5px;
+}
+
+
+.create-product-container input{
+    border-radius: 8px;
+    border-style: solid;
+    border-color: rgb(161, 161, 161);
+    min-height: 3vh;
+    margin-bottom: 10px;
+}
+.create-product-container p{
+    width: 30%;
+}

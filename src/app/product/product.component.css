@@ -1,0 +1,32 @@
+
+.product-unit{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 10px 5px 10px rgb(142, 142, 142);
+    border-style: none;
+    border-radius: 5px;
+    min-height: 7vh;
+    display: flex;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+p{
+    width: 50%;
+}
+
+img{
+    width: 2vw;
+    margin: 2px 15px;
+}
+
+.button-section{
+    display: flex;
+    min-width: 50%;
+    justify-content: right;
+}
+

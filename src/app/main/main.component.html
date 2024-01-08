@@ -1,0 +1,79 @@
+<section class="search-section">
+    <div class="search-input-button">
+    <input type="text" #filter>
+    <button (click)="filterProducts(filter.value)">Buscar</button>    
+    </div>
+    
+    <button (click)="toggleCreatePopUp()">Adicionar Produto</button>
+</section>
+<section id="products-table">
+    <app-product style="width: 90%;"
+    *ngFor="let product of filteredProductList"
+    [product]="product"
+    (productInfo)="getInfo($event)"
+    (productInfoForUpdate)="setUpdateProductValues($event)"
+    (productInfoForDelete)="setDeleteProductValues($event)"></app-product>
+</section>
+<section *ngIf="showNoResultsTag">
+    Não há resultados para essa pesquisa
+</section>
+<section *ngIf="showInfoTag" class="product-crud">
+    <div class="info-product-container">
+        <p>Nome: {{productName}}</p>
+        <p>Código: {{productCode}}</p>
+        <p>Descrição: {{productDescription}}</p>
+        <p>Valor: R${{productValue}}</p>
+    </div>
+    <div class="button-container">
+        <button class="cancel-button" 
+        (click)="hideInfoPopUp()">Voltar</button>
+    </div>
+</section>
+<section *ngIf="showCreateTag" class="product-crud">
+    <form class="create-product-container"
+    [formGroup]="newProductForm"
+    (submit)="addProduct()">
+        <label for="product-name">Nome</label>
+        <input id="product-name" type="text" placeholder="Nome" formControlName="name">
+        <label for="product-code">Código</label>
+        <input id="product-code" type="text" placeholder="Código" formControlName="code">
+        <label for="product-description">Descrição</label>
+        <input id="product-description" type="text" placeholder="Descrição" formControlName="description">
+        <label for="product-value">Valor</label>
+        <input id="product-value" type="number" placeholder="Valor" formControlName="value">
+        <div class="create-product-form-buttons">
+        <button class="save-button" type="submit">Salvar</button>
+        <button class="cancel-button" 
+        (click)="toggleCreatePopUp()">Cancelar</button>
+        </div>
+    </form>
+</section>
+<section *ngIf="showUpdateTag" class="product-crud">
+    <form class="create-product-container"
+    [formGroup]="newProductForm"
+    (submit)="updateProduct()">
+        <label for="product-name">Nome</label>
+        <input id="product-name" type="text" placeholder="Nome" formControlName="name">
+        <label for="product-code">Código</label>
+        <input id="product-code" type="text" placeholder="Código" formControlName="code">
+        <label for="product-description">Descrição</label>
+        <input id="product-description" type="text" placeholder="Descrição" formControlName="description">
+        <label for="product-value">Valor</label>
+        <input id="product-value" type="number" placeholder="Valor" formControlName="value">
+        <div class="create-product-form-buttons">
+        <button class="save-button" type="submit">Salvar</button>
+        <button class="cancel-button" 
+        (click)="hideUpdatePopUp()">Cancelar</button>
+        </div>
+    </form>
+</section>
+<section *ngIf="showDeleteTag" class="product-crud">
+    <div class="info-product-container">
+        <p>Deseja realmente excluir o produto {{productName}}?</p>
+    </div>
+    <div class="create-product-form-buttons">
+        <button class="save-button" (click)="deleteProduct()">Confirmar</button>
+        <button class="cancel-button" 
+        (click)="hideDeletePopUp()">Cancelar</button>
+    </div>
+</section>
